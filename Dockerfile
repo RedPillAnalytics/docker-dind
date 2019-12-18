@@ -11,4 +11,3 @@ RUN apk add py3-pip wget unzip bash git git-lfs
 RUN pip3 install awscli
 RUN pip3 install --upgrade pip
 
-ENTRYPOINT ["./gradlew"]
