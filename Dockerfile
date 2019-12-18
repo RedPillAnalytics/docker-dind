@@ -1,7 +1,6 @@
 FROM docker
 
 ENV GRADLE_USER_HOME .gradle
-ENV GRADLE_VERSION 6.0.1
 
 # Run the Update
 RUN apk update
