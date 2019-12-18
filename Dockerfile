@@ -1,12 +1,15 @@
-FROM gradle:latest
+FROM docker
 
-ENV GRADLE_USER_HOME=.gradle
+ENV GRADLE_USER_HOME .gradle
+ENV GRADLE_VERSION 6.0.1
 
 # Run the Update
-RUN apt-get update && apt-get upgrade -y
-
-# Install awscli
-RUN apt-get install -y python3-pip
+RUN apk update
+# install java
+RUN apk add openjdk8
+# install aws cli
+RUN apk add py3-pip wget unzip bash
 RUN pip3 install awscli
+RUN pip3 install --upgrade pip
 
-ENTRYPOINT ["/usr/bin/gradle"]
+ENTRYPOINT ["./gradlew"]
