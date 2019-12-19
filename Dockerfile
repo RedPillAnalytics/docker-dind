@@ -7,7 +7,7 @@ RUN apk update
 # install java
 RUN apk add openjdk8
 # install aws cli
-RUN apk add py3-pip wget unzip bash git git-lfs openssl libc6-compat
+RUN apk add py3-pip wget unzip bash git git-lfs openssl libc6-compat docker-compose
 RUN pip3 install awscli
 RUN pip3 install --upgrade pip
 
