@@ -4,6 +4,7 @@ steps:
   - --destination=gcr.io/$PROJECT_ID/jenkins-agent:$BRANCH_NAME
   - --cache=true
   - --cache-ttl=48h
+  - --single-snapshot
   - --context=./
   id: kaniko-build
 - name: gcr.io/$PROJECT_ID/jenkins-agent:$BRANCH_NAME
