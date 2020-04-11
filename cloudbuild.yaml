@@ -1,11 +1,11 @@
 steps:
 - name: gcr.io/kaniko-project/executor:latest
   args:
-  - --destination=gcr.io/$PROJECT_ID/jenkins-agent:latest
+  - --destination=gcr.io/$PROJECT_ID/jenkins-agent:$BRANCH_NAME
   - --cache=true
   - --cache-ttl=48h
   - --context=./
   id: kaniko-build
-- name: gcr.io/$PROJECT_ID/jenkins-agent:latest
+- name: gcr.io/$PROJECT_ID/jenkins-agent:$BRANCH_NAME
   id: kaniko-test
 timeout: 3600s
